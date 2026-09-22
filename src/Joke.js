@@ -21,7 +21,7 @@ export default class Joke extends Component {
       }
       getEmoji() {
         if (this.props.votes >= 15) {
-          return "em em-rolling_on_the_floor_laughing";
+          return "em em-star-struck";
         } else if (this.props.votes >= 12) {
           return "em em-laughing";
         } else if (this.props.votes >= 9) {
@@ -33,7 +33,7 @@ export default class Joke extends Component {
         } else if (this.props.votes >= 0) {
           return "em em-confused";
         } else {
-          return "em em-angry";
+          return "em em-rage";
         }
       }
     render() {
