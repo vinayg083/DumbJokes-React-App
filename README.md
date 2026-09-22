@@ -1,3 +1,7 @@
+# Dumb Jokes
+
+A small React app that fetches random dad jokes from [icanhazdadjoke.com](https://icanhazdadjoke.com), lets you vote them up or down, and remembers your jokes and votes in the browser's local storage. See `AGENTS.md` for the stack, structure, and conventions.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -36,6 +40,12 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Running on Node 17 or newer
+
+This project uses `react-scripts` 3.4.1, whose bundled webpack 4 crashes on Node 17+ with `ERR_OSSL_EVP_UNSUPPORTED` (OpenSSL 3 dropped the MD4 hash webpack 4 uses). The `start` and `build` scripts pass `--openssl-legacy-provider` to Node so they work on current Node versions without any extra setup.
+
+When running the dev server non-interactively (containers, CI, or the Draftbit sandbox), also set `CI=true`; otherwise the server stops as soon as its stdin closes. The port and host come from the `PORT` and `HOST` environment variables.
 
 ## Learn More
 
