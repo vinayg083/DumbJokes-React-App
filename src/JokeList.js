@@ -106,14 +106,14 @@ export default class JokeList extends Component {
       <div className="JokeList">
         <div className="JokeList-sidebar">
           <h1 className="JokeList-title">
-            <span>Dumb</span> Jokes
+            <span>Silly</span> Jokes
           </h1>
           <img
             src="https://assets.dryicons.com/uploads/icon/svg/8927/0eb14c71-38f2-433a-bfc8-23d9c99b3647.svg"
             alt="Smiley Face"
           />
           <button className="JokeList-getmore" onClick={this.handleClick}>
-            Fetch Jokes
+            Load Jokes
           </button>
         </div>
         <div className="JokeList-jokes">

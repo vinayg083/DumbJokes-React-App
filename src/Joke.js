@@ -4,7 +4,7 @@ import './Joke.css';
 export default class Joke extends Component {
     getColor() {
         if (this.props.votes >= 15) {
-          return "#4CAF50";
+          return "#00BCD4";
         } else if (this.props.votes >= 12) {
           return "#8BC34A";
         } else if (this.props.votes >= 9) {
@@ -16,7 +16,7 @@ export default class Joke extends Component {
         } else if (this.props.votes >= 0) {
           return "#FF9800";
         } else {
-          return "#f44336";
+          return "#9C27B0";
         }
       }
       getEmoji() {
