@@ -6,7 +6,8 @@ Guidance for AI agents and developers working on this repo. Keep it current when
 
 - **Framework:** Create React App, `react-scripts` 3.4.1 (webpack 4, Babel, Jest). Not ejected.
 - **UI:** React 16.13 with class components; plain CSS files imported per component (`Joke.css`, `JokeList.css`, `App.css`).
-- **Data:** `axios` fetching random jokes from `https://icanhazdadjoke.com` (JSON via `Accept: application/json`). No backend of our own.
+- **Data:** `axios` against `https://icanhazdadjoke.com` (JSON via `Accept: application/json`): `/` for random jokes, `/search?page&limit` for the paged feed. No backend of our own.
+- **Screens:** no router; `App` switches screens on `window.location.hash` (`#/` My Jokes, `#/feed` Joke Feed) with a pill nav.
 - **Persistence:** browser `localStorage` under the key `jokes` (array of `{ id, text, votes }`).
 - **IDs:** `uuid/v4` (uuid 3.x). Note: `uuid` is not declared in `package.json`; it resolves through a transitive dependency of react-scripts. Add it explicitly before upgrading react-scripts.
 - **Icons:** Font Awesome and the `em` emoji classes are expected to be loaded by `public/index.html` (CDN links), not via npm.
@@ -17,8 +18,9 @@ Guidance for AI agents and developers working on this repo. Keep it current when
 ```
 public/          static HTML shell, icons, manifest
 src/index.js     entry; renders <App /> into #root
-src/App.js       wraps <JokeList />
+src/App.js       hash-based screen switch + nav between JokeList and JokeFeed
 src/JokeList.js  fetches jokes, dedupes against seen jokes, sorts by votes, persists to localStorage
+src/JokeFeed.js  infinite-scroll feed (search API, random start page, IntersectionObserver); "Save" appends to localStorage jokes
 src/Joke.js      single joke row: up/down vote, vote color scale, emoji by score
 src/*.css        component-scoped styles
 ```
@@ -39,8 +41,8 @@ The CRA dev server also exits silently when its stdin closes unless `CI=true` is
 
 ## Draftbit sandbox
 
-- The preview server is started by the saved sandbox init script, not by the platform. It runs `CI=true HOST=0.0.0.0 PORT=23075 BROWSER=none npm start` detached, logging to `/tmp/preview-server.log`.
-- To restart by hand: kill whatever holds port 23075, then relaunch with the command above via `setsid -f`.
+- The preview server is started by the saved sandbox init script, not by the platform. It runs `CI=true HOST=0.0.0.0 PORT=58806 BROWSER=none npm start` detached, logging to `/tmp/preview-server.log`.
+- To restart by hand: kill whatever holds port 58806, then relaunch with the command above via `setsid -f`.
 - Deployment is handled through Draftbit's Publishing settings; do not add hostnames or deploy config to the repo.
 
 ## Conventions

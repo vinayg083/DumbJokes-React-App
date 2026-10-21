@@ -1,6 +1,6 @@
 # Dumb Jokes
 
-A small React app that fetches random dad jokes from [icanhazdadjoke.com](https://icanhazdadjoke.com), lets you vote them up or down, and remembers your jokes and votes in the browser's local storage. See `AGENTS.md` for the stack, structure, and conventions.
+A small React app that fetches random dad jokes from [icanhazdadjoke.com](https://icanhazdadjoke.com), lets you vote them up or down, and remembers your jokes and votes in the browser's local storage. A second screen, the Joke Feed (`#/feed`), is an endless scrolling feed of dad jokes; saving one adds it to My Jokes for voting. See `AGENTS.md` for the stack, structure, and conventions.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
