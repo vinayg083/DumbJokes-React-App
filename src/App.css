@@ -13,3 +13,40 @@
     rgba(240, 98, 146, 1) 100%
     );
 }
+
+.App {
+  position: relative;
+}
+
+.App-nav {
+  position: absolute;
+  top: 2.5vh;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.35rem;
+  border-radius: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}
+
+.App-nav-link {
+  padding: 0.5rem 1.25rem;
+  border-radius: 2rem;
+  color: #7e57c2;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.App-nav-link:hover {
+  background-color: #ede7f6;
+}
+
+.App-nav-link.active {
+  background-color: #9575cd;
+  color: white;
+}
