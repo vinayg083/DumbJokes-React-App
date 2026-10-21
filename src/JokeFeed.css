@@ -1,0 +1,130 @@
+.JokeFeed {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 720px;
+    height: 80%;
+    background-color: white;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
+}
+
+.JokeFeed-header {
+    background-color: #9575cd;
+    box-shadow: inset 0 0 25px #7e57c2;
+    color: white;
+    text-align: center;
+    padding: 1.25rem 1rem;
+}
+
+.JokeFeed-title {
+    font-size: 2.5rem;
+    margin: 0;
+    font-weight: 300;
+    letter-spacing: 0.3rem;
+}
+
+.JokeFeed-title span {
+    font-weight: 700;
+    letter-spacing: 0;
+}
+
+.JokeFeed-subtitle {
+    margin: 0.5rem 0 0;
+    opacity: 0.9;
+}
+
+.JokeFeed-scroll {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+    background-color: #f5f3fa;
+}
+
+.JokeFeed-card {
+    position: relative;
+    background-color: white;
+    border-radius: 12px;
+    padding: 1.25rem 1.25rem 1rem 3.25rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.JokeFeed-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.JokeFeed-quote {
+    position: absolute;
+    left: 1.1rem;
+    top: 1.25rem;
+    font-size: 1.3rem;
+    color: #f06292;
+}
+
+.JokeFeed-text {
+    margin: 0 0 0.75rem;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #546e7a;
+}
+
+.JokeFeed-save,
+.JokeFeed-retry {
+    border: none;
+    border-radius: 2rem;
+    padding: 0.4rem 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.JokeFeed-save {
+    background-color: #ede7f6;
+    color: #7e57c2;
+}
+
+.JokeFeed-save:hover {
+    background-color: #9575cd;
+    color: white;
+}
+
+.JokeFeed-save.saved {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    cursor: default;
+}
+
+.JokeFeed-status {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    color: #9575cd;
+}
+
+.JokeFeed-status .em {
+    font-size: 2.5rem;
+}
+
+.JokeFeed-error {
+    color: #c62828;
+}
+
+.JokeFeed-error .fa-exclamation-circle {
+    font-size: 2rem;
+}
+
+.JokeFeed-retry {
+    background-color: #9575cd;
+    color: white;
+    padding: 0.6rem 1.5rem;
+}
+
+.JokeFeed-retry:hover {
+    background-color: #7e57c2;
+}
+
+.JokeFeed-sentinel {
+    height: 1px;
+}
